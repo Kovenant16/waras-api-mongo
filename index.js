@@ -16,7 +16,7 @@ conectarDB();
 
 //const whitelist = [process.env.FRONTEND_URL];
 
-const whitelist = ['http://localhost:5173', 'http://192.168.100.224:5173'];
+const whitelist = ['http://admin.warasdelivery.com'];
 
 
 
