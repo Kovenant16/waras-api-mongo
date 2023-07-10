@@ -36,6 +36,10 @@ app.use(cors({
     origin: 'https://admin.warasdelivery.com'
   }));
 
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://admin.warasdelivery.com');
+    next();
+  });
 
 
 //cors con acceso a todos
