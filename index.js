@@ -16,23 +16,25 @@ conectarDB();
 
 //const whitelist = [process.env.FRONTEND_URL];
 
-const whitelist = ['http://admin.warasdelivery.com'];
+const whitelist = ['https://admin.warasdelivery.com'];
 
 
 
 //Cors con acceso a un dominio
 
-const corsOptions = {
-    origin: function (origin, callback) {
+// const corsOptions = {
+//     origin: function (origin, callback) {
 
-        if (whitelist.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Error de cors de aca"));
-        }
-    },
-};
-app.use(cors(corsOptions));
+//         if (whitelist.includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error("Error de cors de aca"));
+//         }
+//     },
+// };
+app.use(cors({
+    origin: 'https://admin.warasdelivery.com'
+  }));
 
 
 
