@@ -13,25 +13,38 @@ dotenv.config();
 conectarDB();
 
 //cors
-/*
-const whitelist = ["http://localhost:5173"];
+
+//const whitelist = [process.env.FRONTEND_URL];
+
+const whitelist = ['http://localhost:5173', 'http://192.168.100.224:5173'];
+
+
+
+//Cors con acceso a un dominio
 
 const corsOptions = {
     origin: function (origin, callback) {
+
         if (whitelist.includes(origin)) {
             callback(null, true);
         } else {
-            callback(new Error("Error de cors"));
+            callback(new Error("Error de cors de aca"));
         }
     },
 };
 app.use(cors(corsOptions));
-*/
+
+
+
+//cors con acceso a todos
+//app.use(cors())
+
+
 
 //Routing
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/pedidos", pedidoRoutes);
-app.use("/api/local", localRoutes);
+app.use("/api/locales", localRoutes);
 app.use("/api/clientes", clienteRoutes);
 
 const PORT = process.env.PORT || 4000;

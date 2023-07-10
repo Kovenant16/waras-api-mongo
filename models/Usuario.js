@@ -8,6 +8,10 @@ const usuarioSchema = mongoose.Schema(
             required: true,
             trim: true,
         },
+        activo: {
+            type: Boolean,
+            default:false
+        },
         password: {
             type: String,
             required: true,
@@ -21,7 +25,6 @@ const usuarioSchema = mongoose.Schema(
         },
         telefono: {
             type: String,
-            required: true,
             trim: true,
             unique: true,
         },
@@ -41,12 +44,14 @@ const usuarioSchema = mongoose.Schema(
             type: String,
             required: true,
             enum: [
-                "Motorizado",
-                "Soporte",
-                "Atencion",
-                "Socio",
-                "Administrador",
+                "motorizado",
+                "soporte",
+                "atencion",
+                "socio",
+                "administrador",
+                "cliente"
             ],
+            default:"cliente"
         },
         token: {
             type: String,

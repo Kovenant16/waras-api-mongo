@@ -3,7 +3,7 @@ const router = express.Router();
 
 import {
     registrarUsuario,
-    autenticarUsuario,
+    autenticarUsuarioAdmin,
     confirmarUsuario,
     olvidePassword,
     comprobarToken,
@@ -15,7 +15,7 @@ import checkAuth from "../middleware/checkAuth.js";
 
 //auth, registro y confirmacion de usuarios
 router.post("/", registrarUsuario);
-router.post("/login", autenticarUsuario);
+router.post("/login", autenticarUsuarioAdmin);
 router.get("/confirmar/:token", confirmarUsuario);
 router.post("/olvide-password", olvidePassword);
 router.get("/olvide-password/:token", comprobarToken);

@@ -9,17 +9,23 @@ import {
     obtenerPedidosMotorizadoLogueado,
     obtenerPedidosNoEntregados,
     obtenerUltimosVeintePedidos,
-    obtenerPedidosPorFecha
+    obtenerPedidosPorFecha,
+    obtenerMotorizados,
+    obtenerLocales,
+    obtenerClientes
 } from "../controllers/pedidoController.js";
 import checkAuth from "../middleware/checkAuth.js";
 
 const router = express.Router();
 
 router.get("/", checkAuth, );
+router.get("/motorizados",  obtenerMotorizados);
+router.get("/locales", obtenerLocales)
+router.get('/clientes/:telefono', obtenerClientes)
 router.get("/ultimosVeintePedidos", checkAuth, obtenerUltimosVeintePedidos);
 router.get("/pedidosNoEntregados", checkAuth, obtenerPedidosNoEntregados);
 router.get("/pedidosMotorizado", checkAuth, obtenerPedidosMotorizadoLogueado);
-router.get('/obtenerPedidosPorFecha', obtenerPedidosPorFecha)
+router.post('/obtenerPedidosPorFecha', obtenerPedidosPorFecha)
 router.post("/", checkAuth, nuevoPedido);
 router
     .route("/:id")
