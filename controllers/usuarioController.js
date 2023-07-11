@@ -160,6 +160,10 @@ const nuevoPassword = async (req, res) => {
     }
 };
 
+const toggleHabilitarUsuario = async(req, res) => {
+   
+}
+
 const perfil = async (req, res) => {
     const { usuario } = req;
 
