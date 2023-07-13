@@ -22,16 +22,16 @@ const whitelist = ['https://admin.warasdelivery.com', "http://localhost:5173"];
 
 //Cors con acceso a un dominio
 
-const corsOptions = {
-    origin: function (origin, callback) {
+// const corsOptions = {
+//     origin: function (origin, callback) {
 
-        if (whitelist.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Error de cors de aca"));
-        }
-    },
-};
+//         if (whitelist.includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error("Error de cors de aca"));
+//         }
+//     },
+// };
 
 
 // app.use(cors({
@@ -45,7 +45,7 @@ const corsOptions = {
 
 
 //cors con acceso a todos
-//app.use(cors())
+app.use(cors())
 
 
 
