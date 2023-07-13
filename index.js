@@ -22,24 +22,26 @@ const whitelist = ['https://admin.warasdelivery.com', "http://localhost:5173"];
 
 //Cors con acceso a un dominio
 
-// const corsOptions = {
-//     origin: function (origin, callback) {
+const corsOptions = {
+    origin: function (origin, callback) {
 
-//         if (whitelist.includes(origin)) {
-//             callback(null, true);
-//         } else {
-//             callback(new Error("Error de cors de aca"));
-//         }
-//     },
-// };
-app.use(cors({
-    origin: 'https://admin.warasdelivery.com'
-  }));
+        if (whitelist.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Error de cors de aca"));
+        }
+    },
+};
 
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://admin.warasdelivery.com');
-    next();
-  });
+
+// app.use(cors({
+//     origin: 'https://admin.warasdelivery.com'
+//   }));
+
+//   app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', 'https://admin.warasdelivery.com');
+//     next();
+//   });
 
 
 //cors con acceso a todos
